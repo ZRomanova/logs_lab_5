@@ -43,11 +43,12 @@ def main():
 
 
     for key in data:
-        def med(data):
-            s_data = data.sort()
-            return (s_data[(count-1)//2] + s_data[count//2])/2 if (count % 2 == 0) else s_data[count//2]
         count = len(data[key])
-        
+        def med(data):
+            s_data = sorted(data)
+            res = (s_data[(count-1)//2] + s_data[count//2])/2 if (count % 2 == 0) else s_data[count//2]
+            return '%.3f' % res
+
         print(f'URL: {key}'
               f'\tcount: {count}'
               f'\n\tcount_perc: {count/total_count * 100}'
