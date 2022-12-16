@@ -43,16 +43,17 @@ def main():
 
 
     for key in data:
+        def med(data):
+            s_data = data.sort()
+            return (s_data[(count-1)//2] + s_data[count//2])/2 if (count % 2 == 0) else s_data[count//2]
         count = len(data[key])
-        def med():
-            s_data = data[key].sort()
-            med = (s_data[(count-1)//2] + s_data[count//2])/2 if (count % 2 == 0) else s_data[count//2]
+        
         print(f'URL: {key}'
               f'\tcount: {count}'
               f'\n\tcount_perc: {count/total_count * 100}'
               f'\n\ttime_avg: {sum(data[key])/count}'
               f'\n\ttime_max: {max(data[key])}'
-              f'\n\ttime_med: {med}')
+              f'\n\ttime_med: {med(data[key])}')
 
 if __name__ == "__main__":
     main()
