@@ -44,12 +44,13 @@ def main():
 
     for key in data:
         count = len(data[key])
+        med = (data[key][(count-1)//2] + data[key][count//2])/2 if count % 2 == 0 else data[key][count//2]
         print(f'URL: {key}'
               f'\tcount: {count}'
               f'\n\tcount_perc: {count/total_count * 100}'
               f'\n\ttime_avg: {sum(data[key])/count}'
               f'\n\ttime_max: {max(data[key])}'
-              f'\n\ttime_med: {data[key][count//2]}')
+              f'\n\ttime_med: {med}')
 
 if __name__ == "__main__":
     main()
