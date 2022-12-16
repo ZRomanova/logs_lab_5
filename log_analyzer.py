@@ -44,7 +44,9 @@ def main():
 
     for key in data:
         count = len(data[key])
-        med = (data[key][(count-1)//2] + data[key][count//2])/2 if count % 2 == 0 else data[key][count//2]
+        def med():
+            s_data = data[key].sort()
+            med = (s_data[(count-1)//2] + s_data[count//2])/2 if (count % 2 == 0) else s_data[count//2]
         print(f'URL: {key}'
               f'\tcount: {count}'
               f'\n\tcount_perc: {count/total_count * 100}'
